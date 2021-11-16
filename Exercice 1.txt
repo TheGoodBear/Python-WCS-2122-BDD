@@ -1,0 +1,36 @@
+Modèle de données
+-----------------
+
+Créer un modèle de données complet (avec type des champs, nul/non nul, clés primaires et étrangères, relations,
+cardinalités).
+
+Le modèle doit être créé sous DBeaver avec une base PostgreSql. 
+
+
+Spécifications
+--------------
+
+• On gère des végétaux
+
+• Un végétal possède :
+    - un nom
+    - une image (son URL)
+    - un commentaire
+    et appartient à une et une seule catégorie.
+
+• Les catégories sont construites selon la classification dans le fichier "Classification des plantes.png"
+
+• Chaque végétal a au moins une couleur dominante
+• On a par défaut les 8 couleurs suivantes : vert, bleu, rouge, jaune, marron, violet, rose, blanc
+  On doit pouvoir en rajouter autant que l'on souhaite
+  Les couleurs n'ont pas de dépendances entre elles
+
+• Chaque végétal peut être présent dans une ou plusieurs zones géographiques
+• Une zone géographique est située dans un pays, elle possède un nom
+• Un pays possède :
+    - un nom
+    - une image (l'URL de son drapeau)
+    - un nombre d'habitants (en millions)
+• Un pays se trouve sur un et un seul continent
+• Un continent possède un nom
+  Il peut n'avoir aucun pays associé
