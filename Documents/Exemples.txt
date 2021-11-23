@@ -1,0 +1,21 @@
+Structured Query Language
+
+À partir du modèle exemple
+
+Récupérer 
+    tous les noms de végétaux, leur catégorie, leur(s) couleur(s) et le nom du continent ou on les trouvent
+    qui se trouvent en Europe et dont la couleur est vert ou rouge
+    triés par ordre alphabétique inversé de nom de catégorie puis par ordre alphabétique de nom de végétal
+
+select "vegetal"."name" as Végétal, "category"."name" as Catégorie, "color"."name" as Couleur, continent.name as Continent
+from "vegetal"
+inner join vegetalcolor on vegetalcolor.vegetalid = vegetal.id 
+inner join color on color.id = vegetalcolor.colorid 
+inner join category on category.id = vegetal.categoryid 
+inner join vegetalzone on vegetalzone.vegetalid = vegetal.id 
+inner join "zone" on zone.id = vegetalzone.zoneid 
+inner join country on country.id = zone.countryid 
+inner join continent on continent.id = country.continentid 
+where continent."name" = 'Europe' and (color."name" = 'vert' or color."name" = 'rouge')
+order by category."name" desc, vegetal."name"
+
