@@ -1,0 +1,22 @@
+En SQL, créer les requêtes permettant de répondre aux besoins suivants :
+
+(Ajouter des données pertinentes dans la base si nécessaires pour que le résu;ltat des requêtes soit significatif)
+
+1. Liste tous les végétaux par ordre alphabétique
+
+2. Liste tous les végétaux (Nom, Image et Commentaires) ayant la catégorie Mousses
+
+3. Liste tous les végétaux (Nom, Image, Commentaires et Nom de catégorie) ayant la catégorie Plante à ovules
+(incluant les catégories enfant)
+
+4. Liste tous les végétaux (Nom, Image, Commentaires et Nom du pays) se trouvant en France ou en Espagne et 
+dont le nom commence par Chêne
+
+5. Liste tous les végétaux (Nom, Image, Commentaires, Nom de catégorie, Nom et population du pays), se 
+trouvant dans un pays du continent africain ayant plus de 20 millions d'habitants
+
+6. Calcule la population moyenne de tous les pays Européens et retourne une colonne nommée Population 
+moyenne
+
+7. Calcule le nombre de végétaux ayant une couleur dominante Violet ou Rose et qui soit présent dans un pays 
+ayant entre 10 et 30 millions d'habitants inclus
