@@ -10,5 +10,6 @@ En partant de la démo 5
 5 - Afficher toutes plantes ayant cette couleur associées
 
 6 - Gérer la hiérarchie des catégories
+Afficher correctement les plantes et les catégories avec cette nouvelle information
 C'est à dire que si une plante a pour catégorie zzz, enfant de yyy, enfant de xxx
 Il faut afficher "Plante ppp (espèce xxx → yyy → zzz)"
