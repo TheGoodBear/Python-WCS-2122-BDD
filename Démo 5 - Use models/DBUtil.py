@@ -54,6 +54,9 @@ class DBUtil:
         Query = Query
         Cursor.execute(Query)
         Results = Cursor.fetchall()
+        
+        # close cursor
+        Cursor.close()
 
         # return results
         return Results
@@ -99,3 +102,13 @@ class DBUtil:
             for Data in Line:
                 print(f"{Data}{Separator}", end="")
             print()
+
+
+    @classmethod
+    def Close(cls):
+        """
+            Free resources
+        """
+        
+        cls.Connection.close()
+        

@@ -17,6 +17,9 @@ def Main():
     # get categories
     DBUtil.FillModelCollection("SELECT * FROM category", Category)
     DBUtil.FillModelCollection("SELECT * FROM vegetal", Vegetal)
+ 
+    # close DB
+    DBUtil.Close()
   
     # print model content
     PrintCollection(Vegetal)

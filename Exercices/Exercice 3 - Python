@@ -1,0 +1,14 @@
+En partant de la démo 5
+
+1 - Ajouter la gestion des couleurs
+    - modèle Color
+    - Modèle VegetalColor
+2 - Charger les données des nouveaux modèles
+3 - Afficher la liste des végétaux avec pour chacun leurs couleurs associées
+
+4 - Demander à un utilisateur de rentrer une couleur parmi les couleurs existantes
+5 - Afficher toutes plantes ayant cette couleur associées
+
+6 - Gérer la hiérarchie des catégories
+C'est à dire que si une plante a pour catégorie zzz, enfant de yyy, enfant de xxx
+Il faut afficher "Plante ppp (espèce xxx → yyy → zzz)"
