@@ -17,12 +17,10 @@ def Main():
     DBUtil.Connect("DojoSQL2")
    
     # get data from DB
-    DBUtil.GetAllDataFromDB(
-        ("Category", "Vegetal", "Color", "VegetalColor"),
-        ("name", "name", "id", ""))
+    DBUtil.GetAllDataFromDB(("Category", "Vegetal", "Color", "VegetalColor"))
  
     # close DB
-    # DBUtil.Close()
+    DBUtil.Close()
  
     # complete missing data for n-n and recursive relations
     for Element in Vegetal.List:
@@ -34,32 +32,6 @@ def Main():
     Vegetal.PrintAll()
     Category.PrintAll()
     Color.PrintAll()
-    
-    # input("Suite INSERT ...")
-    # Query = "INSERT INTO color (name) VALUES (%s)"
-    # Values = ("Magenta",)
-    # DBUtil.ExecuteQuery(Query, Values)
-    # DBUtil.GetAllDataFromDB(("Color",))
-    # DBUtil.Close()
-    # Color.PrintAll()
-    
-    # input("Suite UPDATE ...")
-    # Query = "UPDATE color SET name=%s WHERE id=%s"
-    # Values = ("Cyan", 10)
-    # DBUtil.ExecuteQuery(Query, Values)
-    # DBUtil.GetAllDataFromDB(("Color",))
-    # DBUtil.Close()
-    # Color.PrintAll()
-    
-    # input("Suite DELETE ...")
-    # Query = "DELETE FROM color WHERE id=%s"
-    # Values = (10,)
-    # DBUtil.ExecuteQuery(Query, Values)
-    # DBUtil.GetAllDataFromDB(("Color",))
-    # DBUtil.Close()
-    # Color.PrintAll()
-    # exit()
-
     
     # # print specified vegetal
     # print("----------------")

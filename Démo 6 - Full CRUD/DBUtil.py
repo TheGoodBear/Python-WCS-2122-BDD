@@ -40,8 +40,7 @@ class DBUtil:
     @classmethod
     def ExecuteQuery(
         cls,
-        Query: str,
-        Values: tuple = None) -> list[tuple]:
+        Query: str) -> list[tuple]:
         """
             Execute specified query
 
@@ -54,44 +53,24 @@ class DBUtil:
         if cls.Connection is None:
             return
 
-        try:
-            # get cursor
-            Cursor = cls.Connection.cursor()
-            
-            # execute query
-            Cursor.execute(Query, Values)
-            
-            if Query.upper().startswith("SELECT "):
-                # Query = "SELECT * FROM color"
-                Results = Cursor.fetchall()
-            else:
-                # Query = "INSERT INTO color (name) VALUES (v1)"
-                # Query = "UPDATE color SET (name=v1) WHERE id=v"
-                # Query = "DELETE FROM color WHERE id=vid"
-                # # NE PAS FAIRE !!!
-                    # v1 = "toto"
-                    # vid = 5
-                    # Query = f"UPDATE color SET (name={v1}) WHERE id={vid}"
-                # FAIRE
-                    # Query = "UPDATE color SET (name=%s) WHERE id=%s"
-                    # Values = (v1, vid)
-                
-                Results = cls.Connection.commit()
-                # print(f"Commit results : {Results}")
-            
-            # close cursor
-            Cursor.close()
-
-            # return results
-            return Results
+        # get cursor
+        Cursor = cls.Connection.cursor()
         
-        except:
-            print(f"\nERREUR lors de l'exécution de la requête\n{Query}")
+        # execute query
+        Query = Query
+        Cursor.execute(Query)
+        Results = Cursor.fetchall()
+        
+        # close cursor
+        Cursor.close()
+
+        # return results
+        return Results
+
 
     @classmethod
     def GetAllDataFromDB(cls,
-        Models: tuple[str],
-        OrderBy: tuple[str] = None):
+        Models: tuple[str]):
         """
             Get all data with standard SQL queries to fill local model lists
 
@@ -99,11 +78,8 @@ class DBUtil:
                 Models : list of models to fill in order
         """
         
-        for index, Model in enumerate(Models):
-            Query = f"SELECT * FROM {Model.lower()}"
-            if OrderBy is not None and OrderBy[index]:
-                Query += f" ORDER BY {OrderBy[index]}"
-            cls.FillModelCollection(Query, eval(Model))
+        for Model in Models:
+            cls.FillModelCollection(f"SELECT * FROM {Model.lower()}", eval(Model))
 
 
     @classmethod
